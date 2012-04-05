@@ -125,7 +125,7 @@ def main():
     need = ['action=', 'change=', 'change-url=', 'commit=', 'project=', 'branch=', 'uploader=',
             'patchset=', 'abandoner=', 'reason=', 'submitter=']
     optlist, args = getopt.getopt(sys.argv[1:], '', need)
-    id = url = hash = who = ''
+    id = url = hash = who = branch = ''
 
     for o, a in optlist:
         if o == '--change': id = a
@@ -136,7 +136,9 @@ def main():
         elif o == '--submitter': who = a
         elif o == '--abandoner': who = a
         elif o == '--branch': branch = a
-
+	
+    if (len(branch) <=0 ):
+	branch='master'
     if (len(what) > 0 and len(id) > 0):
         updateTicket(what, id, hash, url, who, branch)
     else:
