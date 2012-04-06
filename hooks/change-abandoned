@@ -1,2 +1,3 @@
 #/bin/bash
 python `dirname $0`/jirret-process-hook --action abandoned "$@"
+python `dirname $0`/sendxmpp-process-hook --action abandoned "$@"

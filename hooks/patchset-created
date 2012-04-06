@@ -1,2 +1,3 @@
 #/bin/bash
 python `dirname $0`/jirret-process-hook --action new "$@"
+python `dirname $0`/sendxmpp-process-hook --action new "$@"
